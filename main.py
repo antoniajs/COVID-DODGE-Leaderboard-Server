@@ -15,6 +15,10 @@ app = Flask('app')
 # db["number5"] = "Player 5"
 # db["score5"] = 0
 
+@app.route('/')
+def home():
+  return render_template('leaderboard.html')
+
 @app.route("/leaderboard")
 def display_leaderboard():
   number1 = db["number1"] + ": " + str(db["score1"])
